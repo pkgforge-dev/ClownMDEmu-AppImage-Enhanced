@@ -7,7 +7,7 @@
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/ClownMDEmu-AppImage-Enhanced)](https://github.com/pkgforge-dev/ClownMDEmu-AppImage-Enhanced/releases/latest)
 
 <p align="center">
-  <img src="https://github.com/Clownacy/clownmdemu-frontend/raw/master/assets/logo.png" width="128" />
+  <img src="https://github.com/Clownacy/clownmdemu-frontend/raw/master/assets/logo.svg" width="128" />
 </p>
 
 | Latest Stable Release | Latest Nightly Relase | Upstream URL |
