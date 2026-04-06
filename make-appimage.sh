@@ -7,7 +7,7 @@ export ARCH
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export ICON=/usr/share/icons/hicolor/256x256/apps/clownmdemu.png
+export ICON=/usr/share/icons/hicolor/scalable/apps/clownmdemu.svg
 export DESKTOP=/usr/share/applications/com.clownacy.clownmdemu.desktop
 export DEPLOY_OPENGL=1
 
