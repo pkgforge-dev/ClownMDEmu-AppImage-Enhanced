@@ -10,7 +10,7 @@
   <img src="https://github.com/Clownacy/clownmdemu-frontend/raw/master/assets/logo.svg" width="128" />
 </p>
 
-| Latest Stable Release | Latest Nightly Relase | Upstream URL |
+| Latest Stable Release | Latest Nightly Release | Upstream URL |
 | :---: | :---: | :---: |
 | [Click here](https://github.com/pkgforge-dev/ClownMDEmu-AppImage-Enhanced/releases/latest) | [Click here](https://github.com/pkgforge-dev/ClownMDEmu-AppImage-Enhanced/releases/tag/nightly) | [Click here](https://github.com/Clownacy/clownmdemu-frontend) |
 
