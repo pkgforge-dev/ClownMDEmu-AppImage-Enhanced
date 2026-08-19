@@ -6,23 +6,15 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-    cmake    \
-    libdecor \
-    sdl3
+pacman -Syu --noconfirm cmake sdl3
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
-# Comment this out if you need an AUR package
-#make-aur-package
-
-# If the application needs to be manually built that has to be done down here
 echo "Building ClownMDEmu..."
 echo "---------------------------------------------------------------"
 REPO="https://github.com/Clownacy/clownmdemu-frontend"
-# Determine to build nightly or stable
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
 	echo "Making nightly build of ClownMDEmu..."
 	echo "---------------------------------------------------------------"
@@ -35,13 +27,11 @@ else
 fi
 echo "$VERSION" > ~/version
 
-cd ./clownmdemu
-mkdir -p build && cd build
-cmake .. \
+cmake -S ./clownmdemu -B build \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="/usr" \
     -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON \
     -DCMAKE_POLICY_DEFAULT_CMP0069=NEW \
     -DCLOWNMDEMU_FRONTEND_FREETYPE=ON
-make -j$(nproc)
-make install
+cmake --build build -j$(nproc)
+cmake --install build
