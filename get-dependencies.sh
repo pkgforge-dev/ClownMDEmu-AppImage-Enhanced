@@ -27,13 +27,11 @@ else
 fi
 echo "$VERSION" > ~/version
 
-cd ./clownmdemu
-mkdir -p build && cd build
-cmake .. \
+cmake -S ./clownmdemu -B build \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="/usr" \
     -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON \
     -DCMAKE_POLICY_DEFAULT_CMP0069=NEW \
     -DCLOWNMDEMU_FRONTEND_FREETYPE=ON
-make -j$(nproc)
-make install
+cmake --build build -j$(nproc)
+cmake --install build
